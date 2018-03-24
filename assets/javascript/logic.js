@@ -71,12 +71,25 @@ $(document).ready(function () {
 
     })
 
+    // On Button Press add new button
     $(".gifButton").on("click", function () {
         event.preventDefault();
         $(".button-area").empty();
         var userInput = $("#gifInput").val().trim();
         moodArray.push(userInput);
         originalButtons();
+    })
+
+    // On Enter key press add new button
+    $(".input-group").keypress(function(e) {
+        if(e.which === 13) {
+            event.preventDefault();
+            $(".button-area").empty();
+            var userInput = $("#gifInput").val().trim();
+            moodArray.push(userInput);
+            originalButtons();
+        }
+
     })
 
 })
