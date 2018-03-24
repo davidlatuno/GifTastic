@@ -16,10 +16,12 @@ originalButtons();
 
 $(document).ready(function () {
 
+    var moarGifs = 0;
+
     $(".button-area").on("click", ".btn", function () {
 
         var userQuery = $(this).attr("data-name");
-        var queryUrl = "https://api.giphy.com/v1/gifs/search?api_key=sd2K2qfUpMftQdTEu7WlnmCrlCnZAJB8&q=" + userQuery + "&limit=10&offset=0&rating=PG&lang=en";
+        var queryUrl = "https://api.giphy.com/v1/gifs/search?api_key=sd2K2qfUpMftQdTEu7WlnmCrlCnZAJB8&q=" + userQuery + "&limit=10&offset=" + 10 * moarGifs + "&rating=PG&lang=en";
 
         $.ajax({ url: queryUrl, method: "GET" }).then(function (response) {
 
@@ -49,7 +51,17 @@ $(document).ready(function () {
                 // prepend to html
                 $(".gif-area").prepend(newDiv);
             }
+
+            moarGifs++;
+            console.log(moarGifs);
         })
+    })
+
+    $(".button-area").on("mouseout", ".btn", function () {
+
+        moarGifs = 0;
+
+
     })
 
 
@@ -72,7 +84,6 @@ $(document).ready(function () {
 
     // On Button Press add new button
     $(".gifButton").on("click", function () {
-
         event.preventDefault();
         var userInput = $("#gifInput").val().trim();
         if (userInput !== "" && !moodArray.includes(userInput)) {
