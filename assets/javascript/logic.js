@@ -1,4 +1,4 @@
-var moodArray = ["happy", "excited", "angry", "scared"];
+var moodArray = ["happy", "excited", "frustrated", "scared"];
 
 function originalButtons() {
 
@@ -80,15 +80,4 @@ $(document).ready(function () {
         originalButtons();
     })
 
-    // On Enter key press add new button
-    $(".input-group").keypress(function (e) {
-        if (e.which === 13) {
-            event.preventDefault();
-            $(".button-area").empty();
-            var userInput = $("#gifInput").val().trim();
-            moodArray.push(userInput);
-            originalButtons();
-        }
-
-    })
 })
