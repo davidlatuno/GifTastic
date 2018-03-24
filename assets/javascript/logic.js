@@ -1,15 +1,18 @@
 var moodArray = ["happy", "excited", "angry", "scared"];
 
-for (var i = 0; i < moodArray.length; i++) {
+function originalButtons() {
 
-    var newButt = $("<button>");
-    newButt.attr("type", "button");
-    newButt.attr("class", "btn btn-default");
-    newButt.attr("data-name", moodArray[i]);
-    newButt.text(moodArray[i].toUpperCase());
-    $(".button-area").append(newButt);
-
+    for (var i = 0; i < moodArray.length; i++) {
+        var newButt = $("<button>");
+        newButt.attr("type", "button");
+        newButt.attr("class", "btn btn-default");
+        newButt.attr("data-name", moodArray[i]);
+        newButt.text(moodArray[i].toUpperCase());
+        $(".button-area").append(newButt);
+    }
 }
+
+originalButtons();
 
 $(document).ready(function () {
 
@@ -51,10 +54,10 @@ $(document).ready(function () {
 
 
     // Toggle gifs between active and still
-    $(".gif-area").on("click", "img", function() {
+    $(".gif-area").on("click", "img", function () {
         var still = $(this).attr("data-still");
         var active = $(this).attr("data-active");
-        var status= $(this).attr("data-status");
+        var status = $(this).attr("data-status");
 
         if (status === "still") {
             $(this).attr("src", active);
@@ -66,6 +69,14 @@ $(document).ready(function () {
 
 
 
+    })
+
+    $(".gifButton").on("click", function () {
+        event.preventDefault();
+        $(".button-area").empty();
+        var userInput = $("#gifInput").val().trim();
+        moodArray.push(userInput);
+        originalButtons();
     })
 
 })
