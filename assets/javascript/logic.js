@@ -91,30 +91,4 @@ $(document).ready(function () {
         }
 
     })
-
-    // Sticky sidebar
-
-    // initial top offset of sidebar
-    var stickyNavTop = $(".stickySidebar").offset().top;
-
-    // function to toggle affix
-    var stickyNav = function () {
-        var scrollTop = $(window).scrollTop();
-
-        // If we've scrolled to top, stick to top
-        if (scrollTop > stickyNavTop) {
-            $(".stickySidebar").addClass("sidebar-nav-fixed affix");
-        } else {
-            $(".stickySidebar").removeClass("sidebar-nav-fixed affix");
-        }
-    }
-
-    stickyNav();
-
-    // run everytime we scroll
-    $(window).scroll (function() {
-
-        stickyNav();
-    })
-
 })

@@ -14,26 +14,3 @@ html, body {
     padding: 10px 10px 10px 10px;
     text-align: center;
 }
-
-.stickySidebar {
-
-    height: calc(100vh - 191px);
-}
-
-.sidebar-nav-fixed {
-    margin-top: 8px;
-    top: 0;
-    width: 20.53%;
-    height: calc(100vh - 30px);
-    
-}
-
-@media screen and (max-width: 768px) {
-    .sidebar-nav-fixed {
-    width: 100%;
-    z-index: 100;
-    margin-top:0;
-    height: auto;
-    }
-
-}
