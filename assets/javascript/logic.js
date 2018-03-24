@@ -11,7 +11,25 @@ for (var i = 0; i < moodArray.length; i++) {
 
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
 
-    
+    $(".button-area").on("click", ".btn", function () {
+
+        var userQuery = $(this).attr("data-name");
+        var queryUrl = "https://api.giphy.com/v1/gifs/search?api_key=sd2K2qfUpMftQdTEu7WlnmCrlCnZAJB8&q=" + userQuery + "&limit=10&offset=0&rating=G&lang=en";
+
+        $.ajax({ url: queryUrl, method: "GET" }).then(function (response) {
+
+            var gImage = response.data[0].images.fixed_height.url;
+            var newImg = $("<img>");
+            newImg.attr("src", gImage);
+            newImg.attr("alt", userQuery);
+            $(".gif-area").append(newImg);
+
+        })
+
+
+
+    })
+
 })
