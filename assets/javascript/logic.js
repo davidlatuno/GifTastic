@@ -81,8 +81,8 @@ $(document).ready(function () {
     })
 
     // On Enter key press add new button
-    $(".input-group").keypress(function(e) {
-        if(e.which === 13) {
+    $(".input-group").keypress(function (e) {
+        if (e.which === 13) {
             event.preventDefault();
             $(".button-area").empty();
             var userInput = $("#gifInput").val().trim();
@@ -90,6 +90,31 @@ $(document).ready(function () {
             originalButtons();
         }
 
+    })
+
+    // Sticky sidebar
+
+    // initial top offset of sidebar
+    var stickyNavTop = $(".stickySidebar").offset().top;
+
+    // function to toggle affix
+    var stickyNav = function () {
+        var scrollTop = $(window).scrollTop();
+
+        // If we've scrolled to top, stick to top
+        if (scrollTop > stickyNavTop) {
+            $(".stickySidebar").addClass("sidebar-nav-fixed affix");
+        } else {
+            $(".stickySidebar").removeClass("sidebar-nav-fixed affix");
+        }
+    }
+
+    stickyNav();
+
+    // run everytime we scroll
+    $(window).scroll (function() {
+
+        stickyNav();
     })
 
 })
