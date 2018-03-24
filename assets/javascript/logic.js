@@ -68,16 +68,18 @@ $(document).ready(function () {
         }
 
 
-
     })
 
     // On Button Press add new button
     $(".gifButton").on("click", function () {
+
         event.preventDefault();
-        $(".button-area").empty();
         var userInput = $("#gifInput").val().trim();
-        moodArray.push(userInput);
-        originalButtons();
+        if (userInput !== "" && !moodArray.includes(userInput)) {
+            $(".button-area").empty();
+            moodArray.push(userInput);
+            originalButtons();
+        }
     })
 
 })
