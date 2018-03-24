@@ -7,6 +7,13 @@ html, body {
 
 }
 
+.gif {
+    width: 200px;
+    float: left;
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+}
 
 .stickySidebar {
 
@@ -23,7 +30,10 @@ html, body {
 
 @media screen and (max-width: 768px) {
     .sidebar-nav-fixed {
-    width: 92.5%;
+    width: 100%;
     z-index: 100;
+    margin-top:0;
+    height: auto;
     }
+
 }

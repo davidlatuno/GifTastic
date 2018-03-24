@@ -25,8 +25,8 @@ $(document).ready(function () {
 
             for (var j = 0; j < 10; j++) {
                 // Response variables
-                var gImageActive = response.data[j].images.fixed_height.url;
-                var gImageStill = response.data[j].images.fixed_height_still.url;
+                var gImageActive = response.data[j].images.fixed_width.url;
+                var gImageStill = response.data[j].images.fixed_width_still.url;
                 var rating = response.data[j].rating.toUpperCase();
                 // Jquery newDiv
                 var newDiv = $("<div>")
