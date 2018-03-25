@@ -1,10 +1,6 @@
 html, body {
-
-    max-height: 100%;
-    overflow-y: scroll;
     max-width: 100%;
     overflow-x: hidden;
-
 }
 
 .gif {
@@ -17,4 +13,17 @@ html, body {
 
 .navbar-right {
     margin-right: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .navbar-form {
+        text-align: center;
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+    }
 }
