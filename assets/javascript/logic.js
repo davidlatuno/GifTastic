@@ -53,15 +53,20 @@ $(document).ready(function () {
             }
 
             moarGifs++;
-            console.log(moarGifs);
+            if (moarGifs > 0) {
+                $(".counter").text((moarGifs * 10));   
+            }
         })
     })
 
+    // Reset counter for multiple gif request clicks
     $(".button-area").on("mouseout", ".btn", function () {
-
         moarGifs = 0;
+    })
 
-
+    // Clear gifs from page
+    $(".clearButton").click(function() {
+        $(".gif-area").empty();
     })
 
 
