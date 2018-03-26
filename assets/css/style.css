@@ -11,6 +11,21 @@ body {
     color: white;
 }
 
+h1 {
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes example {
+    0%   {color:white;}
+    25%  {color:yellow;}
+    50%  {color:blue;}
+    75%  {color:green;}
+    100% {color:white;}
+
+}
+
 .navbar-default {
     margin-left: 30px;
     margin-right: 30px;
