@@ -25,36 +25,46 @@ $(document).ready(function () {
 
         $.ajax({ url: queryUrl, method: "GET" }).then(function (response) {
 
-            for (var j = 0; j < 10; j++) {
-                // Response variables
-                var gImageActive = response.data[j].images.fixed_width.url;
-                var gImageStill = response.data[j].images.fixed_width_still.url;
-                var rating = response.data[j].rating.toUpperCase();
-                // Jquery newDiv
-                var newDiv = $("<div>")
-                newDiv.attr("class", "gif");
+            // function to call gifs two at a time to fill 5 different divs so that the gifs are "floated" from left to right and top to bottom
+            function gifCol(x, y, z) {
+                for (var j = y; j < z; j++) {
+                    // Response variables
+                    var gImageActive = response.data[j].images.fixed_width.url;
+                    var gImageStill = response.data[j].images.fixed_width_still.url;
+                    var rating = response.data[j].rating.toUpperCase();
+                    // Jquery newDiv
+                    var newDiv = $("<div>")
+                    newDiv.attr("class", "gif");
 
-                // Grab gif from response
-                var newImg = $("<img>");
-                newImg.attr("src", gImageStill);
-                newImg.attr("alt", userQuery);
-                newImg.attr("data-active", gImageActive);
-                newImg.attr("data-still", gImageStill);
-                newImg.attr("data-status", "still");
-                newDiv.append(newImg);
+                    // Grab gif from response
+                    var newImg = $("<img>");
+                    newImg.attr("src", gImageStill);
+                    newImg.attr("alt", userQuery);
+                    newImg.attr("data-active", gImageActive);
+                    newImg.attr("data-still", gImageStill);
+                    newImg.attr("data-status", "still");
+                    newDiv.append(newImg);
 
-                // Add Rating of gif
-                var newP = $("<p>");
-                newP.text("Rating: " + rating);
-                newDiv.append(newP);
+                    // Add Rating of gif
+                    var newP = $("<p>");
+                    newP.text("Rating: " + rating);
+                    newDiv.append(newP);
 
-                // prepend to html
-                $(".gif-area").prepend(newDiv);
+                    // prepend to html
+                    $(x).prepend(newDiv);
+                }
             }
+
+            // using the function to fill the 5 divs of the gif area
+            gifCol(".gifCol1", 0, 2);
+            gifCol(".gifCol2", 2, 4);
+            gifCol(".gifCol3", 4, 6);
+            gifCol(".gifCol4", 6, 8);
+            gifCol(".gifCol5", 8, 10);
 
             moarGifs++;
             if (moarGifs > 0) {
-                $(".counter").text((moarGifs * 10));   
+                $(".counter").text((moarGifs * 10));
             }
         })
     })
@@ -65,7 +75,7 @@ $(document).ready(function () {
     })
 
     // Clear gifs from page
-    $(".clearButton").click(function() {
+    $(".clearButton").click(function () {
         $(".gif-area").empty();
     })
 
