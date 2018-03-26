@@ -42,8 +42,7 @@ h4 {
 }
 
 .dropdown {
-    margin-top: -35px;
-    display: default;
+    margin-bottom: 10px;
 }
 
 .dropdown-menu li {
