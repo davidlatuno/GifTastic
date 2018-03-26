@@ -24,6 +24,27 @@ body {
     text-align: center;
 }
 
+.gif {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.dropdown {
+    position: absolute;
+    bottom: -10px;
+    left: 10px;
+    right: 0;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.gif:hover .dropdown {
+    height: 33px;
+    opacity: 1;
+}
+
 .navbar-right {
     margin-right: 5px;
 }
