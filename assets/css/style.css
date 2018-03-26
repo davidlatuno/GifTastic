@@ -32,11 +32,15 @@ h1 {
 }
 
 .gifCol {
-    width: 205px;
+    width: 17%;
     float: left;
     margin: 10px 10px 10px 10px;
     padding: 10px 10px 10px 10px;
     text-align: center;
+}
+
+.gifCol img {
+    width:100%;
 }
 
 .gif {

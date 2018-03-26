@@ -57,12 +57,16 @@ $(document).ready(function () {
                 }
             }
 
-            // using the function to fill the 5 divs of the gif area
-            gifCol(".gifCol1", 0, 2);
-            gifCol(".gifCol2", 2, 4);
-            gifCol(".gifCol3", 4, 6);
-            gifCol(".gifCol4", 6, 8);
-            gifCol(".gifCol5", 8, 10);
+            // at a certain width using the function to fill the 5 divs of the gif area
+            if ($(window).width() > 491) {
+                gifCol(".gifCol1", 0, 2);
+                gifCol(".gifCol2", 2, 4);
+                gifCol(".gifCol3", 4, 6);
+                gifCol(".gifCol4", 6, 8);
+                gifCol(".gifCol5", 8, 10);
+            } else {
+                gifCol(".gifCol1", 0, 10);
+            }
 
             moarGifs++;
             if (moarGifs > 0) {
