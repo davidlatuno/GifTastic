@@ -78,7 +78,11 @@ $(document).ready(function () {
 
     // Clear gifs from page
     $(".clearButton").click(function () {
-        $(".gif-area").empty();
+        $(".gifCol1").empty();
+        $(".gifCol2").empty();
+        $(".gifCol3").empty();
+        $(".gifCol4").empty();
+        $(".gifCol5").empty();
     })
 
 
