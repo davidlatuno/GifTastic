@@ -74,6 +74,8 @@ $(document).ready(function () {
     // Reset counter for multiple gif request clicks
     $(".button-area").on("mouseout", ".btn", function () {
         moarGifs = 0;
+        $(".counter").text(10);
+
     })
 
     // Clear gifs from page

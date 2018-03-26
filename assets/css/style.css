@@ -12,20 +12,16 @@ body {
 }
 
 .navbar-default {
-    margin-left: 38px;
-    margin-right: 38px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 .gifCol {
-    width: 200px;
+    width: 205px;
     float: left;
     margin: 10px 10px 10px 10px;
     padding: 10px 10px 10px 10px;
     text-align: center;
-}
-
-.gifCol1 {
-    margin-left: 18px;
 }
 
 .navbar-right {
