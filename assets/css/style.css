@@ -27,3 +27,10 @@ html, body {
         margin-right: 10px !important;
     }
 }
+
+@media screen and (max-width: 491px) {
+    .gifCol {
+        float: none;
+        display: inline;
+    }
+}
