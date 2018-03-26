@@ -34,6 +34,8 @@ $(document).ready(function () {
                     var gImageActive = response.data[j].images.fixed_width.url;
                     var gImageStill = response.data[j].images.fixed_width_still.url;
                     var rating = response.data[j].rating.toUpperCase();
+                    var source = response.data[j].url;
+                    var title = response.data[j].title.toUpperCase();
                     // Jquery newDiv
                     var newDiv = $("<div>")
                     newDiv.attr("class", "gif");
@@ -48,9 +50,7 @@ $(document).ready(function () {
                     newDiv.append(newImg);
 
                     // Add Rating of gif
-                    var newP = $("<p>");
-                    newP.text("Rating: " + rating);
-                    newDiv.append(newP);
+                    newDiv.append("<div class='dropdown'><button class='btn btn-default dropdown-toggle' type='button' id='dropdownMenu1' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>Info<span class='caret'></span></button><ul class='dropdown-menu' aria-labelledby='dropdownMenu1'><li>Title: " + title + "</li><li>Rating: " + rating + "</li><li role='separator' class='divider'></li><li><a href=" + source + "'>Url Link</a></li></ul></div>");
 
                     // prepend to html
                     $(x).prepend(newDiv);
