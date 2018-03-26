@@ -36,7 +36,6 @@ $(document).ready(function () {
                     var rating = response.data[j].rating.toUpperCase();
                     var source = response.data[j].url;
                     var title = response.data[j].title.toUpperCase();
-                    console.log(source);
                     // Jquery newDiv
                     var newDiv = $("<div>")
                     newDiv.attr("class", "gif");
@@ -102,8 +101,6 @@ $(document).ready(function () {
             $(this).attr("src", still);
             $(this).attr("data-status", "still");
         }
-
-
     })
 
     // On Button Press add new button
