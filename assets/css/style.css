@@ -41,6 +41,15 @@ h4 {
     border-color: black !important;
 }
 
+.dropdown {
+    margin-top: -35px;
+    display: default;
+}
+
+.dropdown-menu li {
+    text-align: center;
+}
+
 @media screen and (max-width: 768px) {
     .container {
         margin-left: 10px;

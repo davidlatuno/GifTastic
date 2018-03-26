@@ -50,7 +50,11 @@ $(document).ready(function () {
                     newDiv.append(newImg);
 
                     // Add Rating of gif
-                    newDiv.append("<div class='dropdown'><button class='btn btn-default dropdown-toggle' type='button' id='dropdownMenu1' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>Info<span class='caret'></span></button><ul class='dropdown-menu' aria-labelledby='dropdownMenu1'><li>Title: " + title + "</li><li>Rating: " + rating + "</li><li role='separator' class='divider'></li><li><a href=" + source + "'>Url Link</a></li></ul></div>");
+                    var p = $("<p>");
+
+                    p.append("<div class='dropdown'><button class='btn btn-default dropdown-toggle' type='button' id='dropdownMenu1' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>Info<span class='caret'></span></button><ul class='dropdown-menu' aria-labelledby='dropdownMenu1'><li>Title: " + title + "</li><li>Rating: " + rating + "</li><li role='separator' class='divider'></li><li><a href=" + source + "'>Url Link</a></li></ul></div>");
+
+                    newDiv.append(p);
 
                     // prepend to html
                     $(x).prepend(newDiv);
