@@ -1,5 +1,7 @@
+// Holds button names/data-name
 var moodArray = ["happy", "excited", "frustrated", "scared"];
 
+// Uses jquery to add buttons to html based on array
 function originalButtons() {
 
     for (var i = 0; i < moodArray.length; i++) {
@@ -99,13 +101,20 @@ $(document).ready(function () {
 
     // On Button Press add new button
     $(".gifButton").on("click", function () {
+
+        // Prevents default submit function
         event.preventDefault();
+
+        // Takes userinput to create new button
         var userInput = $("#gifInput").val().trim();
         if (userInput !== "" && !moodArray.includes(userInput)) {
             $(".button-area").empty();
             moodArray.push(userInput);
             originalButtons();
         }
+
+        // reset input field after submit
+        $("#gifInput").val("");
     })
 
 })
