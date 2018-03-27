@@ -1,5 +1,5 @@
 // Holds button names/data-name
-var moodArray = ["stoked", "excited", "frustrated", "scared"];
+var moodArray = ["stoked", "excited", "frustrated", "sad"];
 
 // Uses jquery to add buttons to html based on array
 function originalButtons() {
