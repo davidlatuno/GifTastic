@@ -26,6 +26,13 @@ h1 {
 
 }
 
+.backTop {
+    position: fixed;
+    left: 46%;
+    z-index: 20 !important;
+    display: none;
+}
+
 .navbar-default {
     margin-left: 30px;
     margin-right: 30px;

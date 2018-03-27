@@ -1,5 +1,5 @@
 // Holds button names/data-name
-var moodArray = ["happy", "excited", "frustrated", "scared"];
+var moodArray = ["stoked", "excited", "frustrated", "scared"];
 
 // Uses jquery to add buttons to html based on array
 function originalButtons() {
@@ -125,4 +125,26 @@ $(document).ready(function () {
         $("#gifInput").val("");
     })
 
+    // Toggle display of back to top based on window scroll
+    $(window).scroll(function () {
+
+        var top = $(".gifPanel").offset().top;
+        var windowTop = $(window).scrollTop();
+        function topScroll() {
+
+            if (top < windowTop) {
+                console.log("hi");
+                $(".backTop").css("display", "block");
+            } else {
+                $(".backTop").css("display", "none");
+            }
+        }
+        topScroll();
+    })
+
+
+    // Back to top button function
+    $(".backTop").click(function () {
+        $("html, body").animate({scrollTop: 0}, "fast");
+    })
 })
