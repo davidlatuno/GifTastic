@@ -2,7 +2,7 @@
 
 Basic search of Gifs using Giphy API
 
-Made with JavaScript, jQuery, HTML, CSS, and Giphy API
+Made with JavaScript, jQuery, HTML, CSS, Bootstrap, and Giphy API
 
 Url Link: https://davidlatuno.github.io/GifTastic/
 
